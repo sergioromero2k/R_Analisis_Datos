@@ -1,10 +1,10 @@
-setwd("E:/Only Authorized Personnel/U. Sergio/1ST YEAR/1ST QUARTER/1. STATISTICS/RSTUDIO/TRABAJO - TAREA")
+getwd() 
+setwd("E:/Only Authorized Personnel/U. Sergio/1ST YEAR/1ST QUARTER/1. STATISTICS/RSTUDIO/R_Analisis_Datos")
 dir()
 View("datos_grupo_12.txt")
 datos<-read.table("datos_grupo_12.txt",header = TRUE) # Asignar variable en datos_grupo_12.txt
 datos # Mostramos por consola
-# Si no tenemos instalado openxslx, instalamos el paquete, install.package("openxlsx"), ejecutamos paquete library(openxlsx).
-install.packages("openxlsx")
+install.packages("openxlsx") # Si no tenemos instalado openxslx, instalamos el paquete, install.package("openxlsx"), ejecutamos paquete library(openxlsx).
 library("openxlsx")
 write.xlsx(datos, file = "datos.xlsx", rowNames=TRUE,colNames=TRUE) # exportamos archivo de formato "txt" a una hoja de dato.
 
@@ -14,7 +14,6 @@ names(datos) # Para conocer los nombres de las variables, donde vemos que son "T
 str(datos) 
 summary(datos) # Con esto veremos un resumen de la medida de cada una de las variables
 attach(datos) # Desglosamos las variables.
-library(openxlsx)
 
 #FUNCIONES:
 
@@ -168,12 +167,6 @@ plot(density(Facturado))
 hist(Facturado, breaks = "Sturges", freq = TRUE,main="Histograma de Facturado", xlab = "Facturado", ylab = "Frecuencias Absolutas")
 boxplot(Facturado ,main="Diagrama de Facturado",ylab="Valores",col = "pink")
 par(mfrow=c(1,1)) # Volvemos a la configuración
-
-# Deducciones:
-# Las variables Numero de servicios, Tiempo y facturado, son practicamente simetricas.
-# Podemos deducir que en la variable categorica tipo de empresa (pyme) es la que domina del total.
-# Vemos que hay valores atipicos para las variables, tiempo y facturado.
-
 
 # 4 Análisis de la Variables Tiempo
 
