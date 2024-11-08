@@ -231,4 +231,19 @@ cor(Facturado,Tiempo,use="complete.obs",method = "spearman") # 0.8987834
 reg.Fact.Tiem<-lm(Facturado~Tiempo,data = datos)
 summary(reg.Fact.Tiem)
 
-# 7. Análisis con Distinción de Tipo de empresa
+# 7. Análisis con Distinción de Tipo de empresa# 7. Análisis con Distinción de Tipo de empresa
+library(ggplot2)
+# ggplot(datos, aes(x=Tipo.de.empresa, y =Facturado, fill=Tipo.de.empresa))+
+#  geom_boxplot() + 
+#   labs(title="Distribución de Facturado por Tipo de empresa",
+#       x = "Tipo de empresa",
+#       y = "Facturado")+
+#  theme_light()
+
+# ggplot(datos,aes(x=Tipo.de.empresa, y=Tiempo, fill=Tipo.de.empresa))+
+#  geom_boxplot() +
+#  labs(title="Distribución de Tiempo por Tipo de empresa",
+#       x = "Tipo de empresa",
+#       y = "Tiempo")+
+#  theme_light()
+
