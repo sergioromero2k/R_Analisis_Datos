@@ -1,4 +1,4 @@
-# R_Analisis_Datos
+# Lenguaje R Analisis_Datos
 
 ### Problema:
 Una empresa de telecomunicaciones desea analizar su base de clientes para comprender mejor su perfil. Para ello, se han recopilado datos de una muestra de empresas clientes que incluyen información sobre las siguientes variables:
