@@ -272,3 +272,4 @@ medidas_facturado <- datos %>%
     Desviacion_Facturado = sd(Facturado),
   )
 medidas_facturado
+detach(datos)
