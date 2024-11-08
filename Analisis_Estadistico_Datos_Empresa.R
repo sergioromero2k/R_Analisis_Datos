@@ -231,7 +231,7 @@ cor(Facturado,Tiempo,use="complete.obs",method = "spearman") # 0.8987834
 reg.Fact.Tiem<-lm(Facturado~Tiempo,data = datos)
 summary(reg.Fact.Tiem)
 
-# 7. Análisis con Distinción de Tipo de empresa# 7. Análisis con Distinción de Tipo de empresa
+# 7. Análisis con Distinción de Tipo de empresa
 library(ggplot2)
 # ggplot(datos, aes(x=Tipo.de.empresa, y =Facturado, fill=Tipo.de.empresa))+
 #  geom_boxplot() + 
@@ -247,3 +247,28 @@ library(ggplot2)
 #       y = "Tiempo")+
 #  theme_light()
 
+# Instalación paquete dplyr
+install.packages("dplyr")
+library(dplyr)
+
+# Tabla de medidas variable Tiempo
+medidas_tiempo <- datos %>%
+  group_by(Tipo.de.empresa) %>%
+  summarise(
+    Media_Tiempo = mean(Tiempo),
+    Mediana_Tiempo = median(Tiempo),
+    Varianza_Tiempo = var(Tiempo),
+    Desviacion_Tiempo = sd(Tiempo) 
+  )
+medidas_tiempo
+
+# Tabla de medidas variable Facturado
+medidas_facturado <- datos %>%
+  group_by(Tipo.de.empresa) %>%
+  summarise(
+    Media_Facturado = mean(Facturado),
+    Mediana_Facturado = median(Facturado),
+    Varianza_Facturado = var(Facturado),
+    Desviacion_Facturado = sd(Facturado),
+  )
+medidas_facturado
